@@ -7,9 +7,19 @@ class Person {
     protected $address /* City $adress */;
 
     /* constantes de classe */
-    const $NAMES, ["Pierre", "Pierrot", "Pedro", "Brigitte", "Bribri", "Yassine", "Cunégonde", "Clitorine", "Lala", "Po", "Jane", "John"];
+    const $NAMES = ["Pierre", "Pierrot", "Pedro", "Brigitte", "Bribri", "Yassine", "Cunégonde", "Clitorine", "Lala", "Po", "Jane", "John"];
     const $LASTNAMES = ["Smith", "Doe", "Massiet", "Martin", "Love", "Bro", "Bruh", "Certif"];
-    // public $ADDRESSES = [new City("Los Angeles", "California")];
+    const $ADDRESSES = [
+        new City("Los Angeles", "California"),
+        new City("La Grande-Motte", "Héraut"),
+        new City("Montpellier", "Héraut"),
+        new City("Nantes", "44 RPZ"),
+        new City("Aix-en-Provence", 13),
+        new City("Rodez", "Aveyron"),
+        new City("Night City", "NUSA"),
+        new City("BeWeb", "BeWeb Land"),
+        new City("Chez Pedro", "District of Lovers")
+    ];
 
 
     /* méthodes */
