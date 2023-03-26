@@ -23,6 +23,15 @@ class Team {
         return $this->members;
     }
 
+    // fonction retournant le département de chaque membre de l'équipe
+    public function getCountyMember() {
+        $counties = [];
+        foreach ($this->members as $member) {
+            array_push($counties, $member->getAddress()->getCounty());
+        }
+        return $counties;
+    }
+
     // fonction permettant de renvoyer un membre de l'équipe et qui retourne l'équipe
     public function kickMember($member) {
         unset($this->members[array_search($member, $this->members)]);

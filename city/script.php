@@ -52,6 +52,7 @@ print_r($mtp6->getTeam());
 
 // logique métier
 print_r($mtp6->addMember(new Person("Billy", "Lol", new City("Nantes", 44))));
+print_r($mtp6->getCountyMember());
 print_r($mtp6->kickMember($doudou));
 
 echo "</pre>";
