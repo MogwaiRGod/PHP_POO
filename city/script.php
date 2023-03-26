@@ -40,6 +40,7 @@ echo "<br>";
 
 // logique métier
 print_r($doudou->getPerson());
+print_r(Person::randomPerson());
 
 echo "<hr>";
 
@@ -48,11 +49,14 @@ echo "<hr>";
 $mtp6 = new Team([$doudou]);
 
 // get
+echo "<p>L'équipe MTP6 est composée de : ";
 print_r($mtp6->getTeam());
 
 // logique métier
-print_r($mtp6->addMember(new Person("Billy", "Lol", new City("Nantes", 44))));
+$mtp6->addMember(new Person("Billy", "Lol", new City("Nantes", 44)));
+echo "Les membres de l'équipe viennent des départements : <br>";
 print_r($mtp6->getCountyMember());
 print_r($mtp6->kickMember($doudou));
+echo "a été renvoyé de l'équipe";
 
 echo "</pre>";
