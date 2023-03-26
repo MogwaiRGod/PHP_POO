@@ -4,23 +4,11 @@ class Person {
     /* attributs */
     protected $name /* string */;
     protected $lastName /* string */;
-    protected $address /* City $adress */;
+    protected $address /* City */;
 
     /* constantes de classe */
-    const $NAMES = ["Pierre", "Pierrot", "Pedro", "Brigitte", "Bribri", "Yassine", "Cunégonde", "Clitorine", "Lala", "Po", "Jane", "John"];
-    const $LASTNAMES = ["Smith", "Doe", "Massiet", "Martin", "Love", "Bro", "Bruh", "Certif"];
-    const $ADDRESSES = [
-        new City("Los Angeles", "California"),
-        new City("La Grande-Motte", "Héraut"),
-        new City("Montpellier", "Héraut"),
-        new City("Nantes", "44 RPZ"),
-        new City("Aix-en-Provence", 13),
-        new City("Rodez", "Aveyron"),
-        new City("Night City", "NUSA"),
-        new City("BeWeb", "BeWeb Land"),
-        new City("Chez Pedro", "District of Lovers")
-    ];
-
+    protected const NAMES = ["Pierre", "Pierrot", "Pedro", "Brigitte", "Bribri", "Yassine", "Cunégonde", "Clitorine", "Lala", "Po", "Jane", "John"];
+    protected const LASTNAMES = ["Smith", "Doe", "Massiet", "Martin", "Love", "Bro", "Bruh", "Certif"];
 
     /* méthodes */
     public function __construct($nm, $lstNm, $addr = "" /* peut être sans abri malheureusement */) {
@@ -82,14 +70,27 @@ class Person {
 
     // fonction statique permettant de créer une personne aléatoire
     public static function randomPerson() {
-        print_r(self::NAMES[mt_rand(0, count(self::NAMES) -1)]);
-        // return new Person(
-        //     /* prénom aléatoire */
-        //     self::NAMES[mt_rand(0, count(self::NAMES) -1)],
-        //     /* nom aléatoire */
-        //     self::LASTNAMES[mt_rand(0, count(self::LASTNAMES) -1)],
-        //     /* adresse aléatoire */
-        //     self::ADDRESSES[mt_rand(0, count(self::LASTNAMES) -1)]
-        // );
+        // on ne peut pas créer de constante de classe nécessitant des opérations complexes =>
+        // un tableau d'objets (custom) en fait partie, donc je suis obligée de l'initialiser ici
+        $ADDRESSES = [
+            new City("Los Angeles", "California"),
+            new City("La Grande-Motte", "Héraut"),
+            new City("Montpellier", "Héraut"),
+            new City("Nantes", "44 RPZ"),
+            new City("Aix-en-Provence", 13),
+            new City("Rodez", "Aveyron"),
+            new City("Night City", "NUSA"),
+            new City("BeWeb", "BeWeb Land"),
+            new City("Chez Pedro", "District of Lovers")
+        ];
+        
+        return new Person(
+            /* prénom aléatoire */
+            self::NAMES[mt_rand(0, count(self::NAMES) -1)],
+            /* nom aléatoire */
+            self::LASTNAMES[mt_rand(0, count(self::LASTNAMES) -1)],
+            /* adresse aléatoire */
+            $ADDRESSES[mt_rand(0, count(self::LASTNAMES) -1)]
+        );
     }
 }

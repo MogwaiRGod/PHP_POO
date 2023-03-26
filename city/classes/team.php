@@ -37,4 +37,14 @@ class Team {
         unset($this->members[array_search($member, $this->members)]);
         return $this->members;
     }
+
+    // fonction statique permettant de générer une équipe aléatoire selon le nombre entré en argument
+    static public function randomTeam($nb = 5) {
+        $team = new Team();
+
+        for ($i=0; $i<$nb; $i++) {
+            $team->addMember(Person::randomPerson());
+        }
+        return $team;
+    }
 }

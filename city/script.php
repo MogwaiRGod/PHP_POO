@@ -40,7 +40,9 @@ echo "<br>";
 
 // logique métier
 print_r($doudou->getPerson());
-print_r(Person::randomPerson());
+// personne aléatoire
+echo "Voici une personne générée aléatoirement : <br>";
+print_r(Person::randomPerson()->getPerson());
 
 echo "<hr>";
 
@@ -57,6 +59,9 @@ $mtp6->addMember(new Person("Billy", "Lol", new City("Nantes", 44)));
 echo "Les membres de l'équipe viennent des départements : <br>";
 print_r($mtp6->getCountyMember());
 print_r($mtp6->kickMember($doudou));
-echo "a été renvoyé de l'équipe";
+echo "a été renvoyé de l'équipe <br> Voici une équipe aléatoire :";
+// création et affichage d'une équipe aléatoire de 10 personnes
+print_r(Team::randomTeam(10)->getTeam());
+
 
 echo "</pre>";
