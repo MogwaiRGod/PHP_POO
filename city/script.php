@@ -24,17 +24,19 @@ echo $LGM->readCounty() . "<br>";
 echo "<hr>";
 
 /* tests de la classe personne */
-$doudou = new Person("Bob", "Doudou", "8 rue de Toto");
+$doudou = new Person("Bob", "Doudou", new City("LGM", 34));
 
 // get
 echo $doudou->getName() . "<br>";
 echo $doudou->getLastName() . "<br>";
-echo $doudou->getAddress() . "<br>";
+print_r($doudou->getAddress());
+echo "<br>";
 
 // set
 echo $doudou->setName("Gros Bill") . "<br>";
 echo $doudou->setLastName("Billy") . "<br>";
-echo $doudou->setAddress("9 avenue OK") . "<br>";
+print_r($doudou->setAddress(new City("Montpellier", 34)));
+echo "<br>";
 
 // logique métier
 print_r($doudou->getPerson());
@@ -49,7 +51,7 @@ $mtp6 = new Team([$doudou]);
 print_r($mtp6->getTeam());
 
 // logique métier
-print_r($mtp6->addMember(new Person("Billy", "Lol", "4 rue XXXX")));
+print_r($mtp6->addMember(new Person("Billy", "Lol", new City("Nantes", 44))));
 print_r($mtp6->kickMember($doudou));
 
 echo "</pre>";

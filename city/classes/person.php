@@ -23,7 +23,7 @@ class Person {
         return $this->lastName;
     }
 
-    // fonction qui retourne l'adresse de la personne
+    // fonction qui retourne l'adresse City de la personne
     public function getAddress() {
         return $this->address;
     }
@@ -43,8 +43,9 @@ class Person {
     }
 
     // fonction permettant de changer l'adresse de la personne et qui la retourne
-    public function setAddress($newAddr) {
-        $this->address = $newAddr;
+    public function setAddress($newAddr /* City */) {
+        $this->address->setName($newAddr->getName());
+        $this->address->setCounty($newAddr->getCounty());
         return $this->address;
     }
 
@@ -53,10 +54,12 @@ class Person {
     // fonction retournant toutes les infos de la personne sous forme de tableau
     // <=> getAll
     public function getPerson() {
-        return [
-            $this->name,
-            $this->lastName,
-            $this->address,
-        ];
+        return $this;
+        // version alternative dans un tableau
+        // return [
+        //     $this->name,
+        //     $this->lastName,
+        //     $this->address,
+        // ];
     }
 }
