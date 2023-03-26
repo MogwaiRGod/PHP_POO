@@ -44,8 +44,7 @@ class Person {
 
     // fonction permettant de changer l'adresse de la personne et qui la retourne
     public function setAddress($newAddr /* City */) {
-        $this->address->setName($newAddr->getName());
-        $this->address->setCounty($newAddr->getCounty());
+        $this->address=$newAddr;
         return $this->address;
     }
 
