@@ -20,6 +20,15 @@ echo "<br>Premier médoc :<br>";
 $cocaine = new Medicine ("Cocaïne", 200, 5);
 print_r($cocaine->showMed());
 
+echo "<br><hr><br>Première pharmacie : <br>";
+
+/* test de la classe pharmacie */
+$bigPharma = new Pharmacy([$cocaine], [$doudou]);
+print_r($bigPharma);
+echo $bigPharma->checkMed("Cocaïne");
+
+
+
 
 
 

@@ -13,7 +13,7 @@ class Client {
 
     // fonction retournant le nom et le crédit du client
     public function showClient() {
-        return $this;
+        return $this->name . " a un crédit de : " . $this->credit . "€";
     }
 
     // fonction mettant à jour le crédit du client, selon la somme qu'il a payée ($paid), 
