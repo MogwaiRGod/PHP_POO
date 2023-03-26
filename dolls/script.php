@@ -40,6 +40,9 @@ if ($doll2->getInside()) {
     print_r ($doll3);
 }
 
+// on sort la poupée
+echo "<br> On sort la poupée n°2 <br>";
+$doll2->getOut($doll3);
 // flemme de faire tous les tests OMGGGGGGGGGGGGG pas le temps
 
 echo "</pre>";
