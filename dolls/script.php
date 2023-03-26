@@ -6,7 +6,7 @@ include 'classes/classes.php';
 // début du script
 echo "<pre>";
 
-// instanciation de poupées russes, fermées et vides
+// instanciation de poupées russes, fermées, vides et à l'intérieur d'aucune poupée
 $doll0 = new RussianDoll(0);
 $doll1 = new RussianDoll(1);
 $doll2 = new RussianDoll(2);
