@@ -52,4 +52,17 @@ class Pharmacy {
         
         return "Transaction échouée";
     }
+
+    // fonction permettant de mettre à jour le stock d'un médoc
+    // retourne un message
+    public function updateStock($med) {
+        foreach($this->stock as $medc) {
+            // si une occurence du médoc est trouvée
+            if ($medc->getName() == $med->getName()) {
+                // on remplace l'objet médicament
+                $medc = $med;
+                return "Stock mis à jour";
+            }
+        }
+    }
 }
