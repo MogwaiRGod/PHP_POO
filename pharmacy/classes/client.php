@@ -9,7 +9,13 @@ class Client {
         $this->credit = $cred;
     }
 
-    /* logique métier */
+    /* GET */
+    
+    public function getName() {
+        return $this->name;
+    }
+
+    /* LOGIQUE METIER */
 
     // fonction retournant le nom et le crédit du client
     public function showClient() {

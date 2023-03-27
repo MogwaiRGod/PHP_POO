@@ -25,10 +25,4 @@ echo "<br><hr><br>Première pharmacie : <br>";
 /* test de la classe pharmacie */
 $bigPharma = new Pharmacy([$cocaine], [$doudou]);
 print_r($bigPharma);
-echo $bigPharma->checkMed("Cocaïne");
-
-
-
-
-
-
+echo $bigPharma->readMed("Cocaïne");
